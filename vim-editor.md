@@ -1,4 +1,6 @@
 ## Advanced Vim Editing: To Boost Your Productivity
+Vim is a simple command line editor with better customisation. There are 3 modes in Vim editor 1. Normal mode, 2. Insert Mode and 3. Visual Mode makes it easier to edit.
+
 
 **1. Modal Editing**
 
@@ -8,7 +10,7 @@
     - ` 0, ^ `: Move to the beginning of the current line or the first non-whitespace character.
     - ` $ `: Move to the end of the current line.
     - ` gg `: Go to the first line.
-    - ` shft + g `: Go to the last line.
+    - ` shft + g (G)`: Go to the last line.
     - ` shft + zz `: Save and exit
 - **Insert Mode:** Enter this mode to insert text.
     - `i, a, o, O`: Insert before the cursor, after the cursor, a new line below, or a new line above.
@@ -29,7 +31,9 @@
 
 - **Basic Search:**
     - `/pattern`: Search forward for the pattern.
+        - Ex: `/ws-var1`: to find ws-var in the program.     
     - `?pattern`: Search backwards for the pattern.
+        - Ex: ` ?ws-var`: to find ws-var from down.
     - `n`: Find the next match.
     - `N`: Find the previous match.
 - **Advanced Search:**
@@ -39,7 +43,9 @@
     - `\*`: Match zero or more occurrences.
 - **Replace:**
     - `:%s/old/new/g`: Replace all occurrences of "old" with "new" in the current file.
+       - `%s/var/ws-var/g`: To replace all the var with ws-var.
     - `:5,11%s/var/ws-var/gci`: Replace according to your option from 5 to 11th line.
+       - `4,21%s/var/ws-var/gci`: To replace all 'var' with 'ws-var' from 4 to 21 lines according to your options.
 
 **5. Window Management and Tabs**
 
@@ -53,11 +59,13 @@
     - `:tabprevious`: Go to the previous tab.
     - `:tabclose`: Close the current tab.
 
-**Indent/Outdent:**
+- **Indent/Outdent:**
 
-- `>>`: Indent the current line or selected lines.
-- `<<`: Outdent the current line or selected lines.
+    - `>>`: Indent the current line or selected lines.
+    - `<<`: Outdent the current line or selected lines.
 - **Change case:**
     - `guu`: Change the current line to lowercase.
     - `gUU`: Change the current line to uppercase.
-    - `~`: Change the case of the selection
+    - `~`: Change the case of the selection.
+    - `:%s/.*/\L&/`: Converts all Upper to Lower cases.
+    - `:%s/.*/\U&/`: Converts all Lower to Upper cases.
