@@ -58,6 +58,7 @@ Vim is a simple command line editor with better customisation. There are 3 modes
     - `:tabnext`: Go to the next tab.
     - `:tabprevious`: Go to the previous tab.
     - `:tabclose`: Close the current tab.
+    - `Ctrl + ww`: Allows to navigate between the tabs.
 
 - **Indent/Outdent:**
 
@@ -69,3 +70,5 @@ Vim is a simple command line editor with better customisation. There are 3 modes
     - `~`: Change the case of the selection.
     - `:%s/.*/\L&/`: Converts all Upper to Lower cases.
     - `:%s/.*/\U&/`: Converts all Lower to Upper cases.
+
+**Note: Actively seeking contributions, make push requests.**
