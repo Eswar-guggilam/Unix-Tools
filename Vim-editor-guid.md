@@ -31,7 +31,9 @@ Vim is a simple command line editor with better customisation. There are 3 modes
 
 - **Basic Search:**
     - `/pattern`: Search forward for the pattern.
-        - Ex: `/ws-var1`: to find ws-var in the program.     
+        - Ex: `/ws-var1`: to find ws-var in the program.
+    - `/string1.*string2`: Search for the string, starting with 'string1' & ending with 'string2'.
+        - Ex: `/ws.*out`: To find the string starting with 'ws' & ending with 'out' (Ex: ws-stmt-out-num) 
     - `?pattern`: Search backwards for the pattern.
         - Ex: ` ?ws-var`: to find ws-var from down.
     - `n`: Find the next match.
@@ -71,4 +73,6 @@ Vim is a simple command line editor with better customisation. There are 3 modes
     - `:%s/.*/\L&/`: Converts all Upper to Lower cases.
     - `:%s/.*/\U&/`: Converts all Lower to Upper cases.
 
-**Note: Actively seeking contributions, make push requests.**
+
+- **Note**
+    - Please suggest new ideas for improving this document. Actively seeking contributions
