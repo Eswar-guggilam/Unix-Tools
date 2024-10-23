@@ -127,6 +127,13 @@ nano file.txt           # Open or create a file for editing
 ## 3. File Permissions
 
 ### chmod - Change file permissions
+|Representation|Definition||Representation|Definition||Representation|Definition|
+|--------------|----------|-|--------------|----------|-|--------------|------------------------------|
+|u:|User||r:|Read Permission||+:| To add permissions to file|
+|g:|Group||w:|Write Permission||-:| To remove permissions of file|
+|o:|Others||x:|Exicutable Permission||=:| To assign permissions to file|
+
+
 
 ```bash
 chmod 755 file.txt      # Change permissions using octal notation
@@ -190,13 +197,15 @@ ifconfig                # Display network interface configuration
 
 ```bash
 grep pattern file.txt   # Search for a pattern in a file
-grep -r pattern directory/  # Recursively search for a pattern in files
+grep -r pattern directory/  # Recursively search for a pattern in files of a Directory
+grep 'pattern' *.cob    #Search for the pattern in all .cob files
+grep 'display.*error' *.cob   #Search for string starts with display & ends with error in .cob files
 ```
 
 ### awk - Pattern scanning and text processing language
 
 ```bash
-awk '{print $1}' file.txt   # Print the first field of each line
+awk '{print $1}' file.cob   # Print the first word/field of each line
 ```
 
 ### General
@@ -208,4 +217,5 @@ cal                  # Prints the current month callender
 date                 # Prints today date, time, day
 ```
 
-> Contributions are welcome! Feel free to submit a pull request to enhance or expand the content of this file.
+**Note**
+> Please suggest new ideas for improving this document. Actively seeking contributions
