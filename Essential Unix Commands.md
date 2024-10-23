@@ -1,3 +1,6 @@
+[![LinkedIn](https://img.shields.io/badge/linkedin-Eswar%20Guggilam%20linkedIn-blue)](https://www.linkedin.com/in/eswar-guggilam-tv/)
+
+
 This document overviews essential Unix commands for file, directory, system, and network management. It assumes a basic understanding of Unix and shell environments. Each command is presented with common usage examples to assist in daily operations, especially in a developer or administrative context.
 
 > This document is prepared by considering you have a basic understanding of UNIX and shell.
