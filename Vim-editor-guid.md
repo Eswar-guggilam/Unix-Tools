@@ -1,8 +1,7 @@
+
+[![VIM](https://www.vim.org/images/vim_editor.gif)](https://www.vim.org/images/vim_editor.gif)
+
 [![LinkedIn](https://img.shields.io/badge/linkedin-Eswar%20Guggilam%20linkedIn-blue)](https://www.linkedin.com/in/eswar-guggilam-tv/)
-
-![My Image](https://en.m.wikipedia.org/wiki/File:Vimlogo.svg)
-
-
 ## Advanced Vim Editing: To Boost Your Productivity
 Vim is a simple command line editor with better customisation. There are 3 modes in Vim editor 1. Normal mode, 2. Insert Mode and 3. Visual Mode makes it easier to edit.
 
