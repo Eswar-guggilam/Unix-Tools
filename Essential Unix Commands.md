@@ -33,17 +33,12 @@ The `cd` command navigates between directories.
 ```bash
 cd /path/to/directory   # Change to a specific directory
 cd ..                   # Move up one directory
+cd ../..                # Go back 2 directories
+cd ../../..             # Go back 3 directories
 cd ~ (or) cd            # Change to home directory
 cd -                    # Change to previous directory
 ```
 
-### pwd - Print working directory
-
-The `pwd` command displays the current directory path.
-
-```bash
-pwd         # Display the current working directory
-```
 
 ### Make/Remove directory
 
@@ -198,13 +193,81 @@ ifconfig                # Display network interface configuration
 ## 7. Text Processing
 
 ### grep - Search for patterns in files
+#### Common Options
+|Option |Description |
+|--------|-------------------|
+|-i|Case-insensitive search|
+|-v|Invert match (show non-matching lines)|
+|-r, -R|Recursive search in directories|
+|-l|Show only filenames with matches|
+|-n|Show line numbers|
+|-c|Count matching lines|
+|-w|Match whole words only|
+|-A n|Show n lines after match|
+|-B n|Show n lines before match|
+|-C n|Show n lines before and after match|
+|-E|Extended regular expressions (same as egrep)|
+|--color|Highlight matching text|
 
 ```bash
-grep pattern file.txt   # Search for a pattern in a file
+grep pattern file.txt   # Search for a pattern in a file.txt
+grep -i "error" logfile.txt   # Case-insensitive search
 grep -r pattern directory/  # Recursively search for a pattern in files of a Directory
 grep 'pattern' *.cob    #Search for the pattern in all .cob files
 grep 'display.*error' *.cob   #Search for string starts with display & ends with error in .cob files
+
+# Multiple Patterns
+
+grep -E "error|warning" file.txt    # Match multiple patterns (OR)
+grep "error" file.txt | grep "warning"    # Match all patterns (AND)
+
+# Controll lines
+
+grep -A 3 "error" logfile.txt    # Show 3 lines after match
+grep -B 3 "error" logfile.txt    # Show 3 lines before match
+grep -C 3 "error" logfile.txt    # Show 3 lines before and after match
+
+# Line Numbers and Count
+
+grep -n "error" logfile.txt    # Show line numbers with matches
+grep -c "error" logfile.txt    # Count number of matches
+
+# Advanced
+
+grep "error.*" file.txt    # Match words starting with 'error'
+grep -E "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" file.txt    # Match email addresses
+grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" file.txt    # Match IP addresses
+history | grep "secompilecob"    # Search command history for secompilecob
+ps aux | grep "nginx"    # Search currently processing list
+
+
+
 ```
+### Find
+The `find` command is a powerful Unix/Linux utility for searching files and directories in a hierarchy.
+```bash
+find  -name "example.txt"  # Find files named exactly "example.txt" in all paths
+find  -name "*.pdf"	#Using *
+find  -type d		# Find directories
+find  -type f		# Find regular files
+find  -type l		# Find symbolic links
+
+# Search by time
+
+find  -mtime -1		# Files modified less than 24 hours ago
+find  -atime +7		# Files accessed more than 7 days ago
+find  -cmin -30		# Files changed within last 30 minutes
+
+# Search by size
+
+find  -size +100M	# Files larger than 100MB
+find  -size -1k		# Files smaller than 1KB
+find  -size 20M		# Files exactly 20MB
+find  -name "*.pdf" -size +1M		# AND condition
+find  -name "*.jpg" -o -name "*.png"	# OR condition
+find  -not -name "*.txt"		# NOT condition
+```
+
 
 ### awk - Pattern scanning and text processing language
 
@@ -216,9 +279,33 @@ awk '{print $1}' file.cob   # Print the first word/field of each line
 ### 
 
 ```bash
+pwd                  # Display the current working directory
 history              # Print all commands used in current session
 cal                  # Prints the current month callender
 date                 # Prints today date, time, day
+top                  # Monitor system processes in real me.
+kill                 # Terminate a process by ID (PID in ps command)
+killall firefox      # Kills all "firefox" processes.
+ifconfig             # Shows network interfaces.
+whoami               # Display the current logged-in user.
+
+```
+
+### Alias
+- The `alias` command allows users to create shortcuts or abbreviations for longer commands and is commonly used to customize the command-line environment.
+- Therefore, you can use alias variables instead complex commands
+
+```bash
+alias name='command'    # Create alias
+alias                   # List aliases
+unalias name            # Remove alias
+
+# Creating a new alias
+
+alias lsrt='ls -lrt'    # Alias of lsrt
+alias c='clear'         # alias for Clear screen 'c'
+alias ..='cd ..'        # Go up one directory '..'
+
 ```
 
 **Note**
