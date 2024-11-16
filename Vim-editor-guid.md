@@ -12,6 +12,7 @@ Vim is a simple command line editor with better customisation. There are 3 modes
     - ` h, j, k, l `: Move one character left, down, up, or right.
     - ` w, e, b `: Move to the beginning or end of the next or previous word.
     - ` 0, ^ `: Move to the beginning of the current line or the first non-whitespace character.
+    - ` dd, yy, pp `: Delete lines, Copy lines, Paste lines.
     - ` $ `: Move to the end of the current line.
     - ` gg `: Go to the first line.
     - ` shft + g (G)`: Go to the last line.
