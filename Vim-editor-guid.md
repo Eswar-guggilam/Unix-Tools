@@ -23,6 +23,7 @@ Vim is a simple command line editor with better customisation. There are 3 modes
     - `v`: Character-wise selection.
     - `shft + v`: Line-wise selection.
     - `gv`: Go back to the previous selection.
+    - `ctrl + alt + v`: Free form selection, that can effect multiple lines
 
 **2. Motions and Operators**
 
