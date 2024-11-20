@@ -28,7 +28,7 @@ ls *sam*      # List file that contain "sam" in the name
 
 ### cd - Change directory
 
-The `cd` command navigates between directories.
+The `cd` (Change Directory) command navigates the filesystem hierarchy in Unix/Linux systems.
 
 ```bash
 cd /path/to/directory   # Change to a specific directory
@@ -40,11 +40,21 @@ cd -                    # Change to previous directory
 ```
 
 
-### Make/Remove directory
+### Create/Remove directory -mkdir
+The `mkdir` (Make Directory) command is used to create new directories in Unix/Linux systems.
 
 ```bash
 mkdir new_directory     # Create a new directory
+mkdir dir1 dir2 dir3    # Create multiple directories.
 mkdir -p path/to/new/directory  # Create nested directories
+mkdir -p project/{src,docs,tests}/{lib,bin,data}    # Create complete directory structure
+
+# Create directory with specific permissions
+mkdir -m 755 directory  # rwxr-xr-x
+mkdir -m 700 private    # rwx------
+mkdir -m 777 public     # rwxrwxrwx
+
+# Remove Direcotries
 rmdir directory        # To remove existing directory
 rmdir path/to/directory # To remove directory using path 
 ```
@@ -60,12 +70,19 @@ rm -f *                 # To remove all the directories
 ```
 
 ### cp - Copy files or directories
+The `cp` (Copy) command is used to copy files and directories in Unix/Linux systems.
 
 ```bash
 cp file.txt destination/    # Copy a file to a directory
 cp -r source/ destination/  # Copy a directory and its contents
-cp *                        # Copy all
+cp *.COB /home              # Copy all .COB files to home directory
+cp file[1-3].txt destination/  # Copy file1, file2, file3
 cp path/to/dir1 path/to/dir2 # Copy multiple directories
+
+# backup/update
+cp -u source.txt destination/  # Copy only if source is newer
+cp -b file.txt destination/  # Create backup of existing files
+
 ```
 
 ### mv - Move or rename files or directories
