@@ -174,17 +174,20 @@ uname -s                # Display kernel name
 uname -r                # Display kernel release
 ```
 
-### df - Display disk space usage
+### Disk Usage Commands
 
 ```bash
 df -h                   # Display disk space usage in human-readable format
-```
 
-### du - Estimate file and directory space usage
-
-```bash
 du -sh directory/       # Display total size of a directory
 du -h --max-depth=1 /   # Display size of top-level directories
+
+du -h --max-depth=1 | sort -hr  # Find largest directories in current location
+
+lsof | grep python  # Check which open python files are using disk space
+
+fdisk -l # Disk Partitioning Information
+
 ```
 
 ### top - Display and update sorted information about processes
@@ -306,6 +309,54 @@ killall firefox      # Kills all "firefox" processes.
 ifconfig             # Shows network interfaces.
 whoami               # Display the current logged-in user.
 
+```
+### Process Status PS:
+
+The `ps` (Process Status) command provides information about active processes on a Unix/Linux system.
+
+```bash
+ps     # Current terminal processes
+ps aux    # All processes
+ps -ef    # Detailed process list
+
+ps aux | grep debug    # Find specific process
+ps -C command_name           # Find processes by command
+
+ps -eo pid,user,cpu,memory,command      # Custom columns
+ps aux --sort=-pcpu                   # Sort by CPU usage
+ps aux --sort=-pmem                 # Sort by memory usage
+
+ps -ejH                  # Show process hierarchy
+pstree                  # Alternate tree view
+ps axjf                # Compact tree view
+
+pidstat               # cpu usage per pid
+pidstat 2             # Monitors every 2 seconds
+
+topas       # AIX system monitoring tool
+nmon        # AIX performance monitor
+
+```
+
+### nohup (No Hang Up):
+
+allows processes to continue running even after the user who started them logs out or the terminal session closes.
+
+```bash
+nohup command [arguments] [&]
+# command: The command you want to run
+# arguments: Optional arguments for the command
+# &: Optional symbol to run the process in the background
+
+nohup python3 long_script.py > custom_output.log  
+# Exicutes python script & stores logs to custom_output.log, all in background(&)
+# If not provide custom_output, By default, nohup redirects output to nohup.out in the current directory
+
+ps -ef | grep $(whoami) | grep command
+# To get nohup processid
+
+kill -9 [PID]
+# kill the nohup process
 ```
 
 ### Alias
